@@ -1,0 +1,8 @@
+.transferSheet {
+  height: 70%;
+  width: 100%;
+  background-color: #364152 !important;
+}
+.transferSheet .van-action-sheet__header {
+  color: rgb(230, 230, 230);
+}
