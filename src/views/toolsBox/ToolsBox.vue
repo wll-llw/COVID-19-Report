@@ -1,6 +1,6 @@
 <template>
   <div id="ToolsBox">
-    <div class="tools_item" @click="routerClick(index, item.routerPath)" v-for="item,index in toolList" :key="item.name">
+    <div class="tools_item" @click="routerClick(index, item.routerPath)" v-for="(item,index) in toolList" :key="item.name">
       <div :ref="'toolsItem'+index" :class="[index%2==0?'even_item':'odd_item']" class="left_item">
         <i :ref="'icon'+index" class="iconfont" :class="item.icon"></i>
       </div>
@@ -21,7 +21,7 @@ export default {
         {name: '国内疫情速报', icon: 'icon-subao', routerPath: '/NationalNews'},
         {name: '谣言排行榜', icon: 'icon-yaoyan', routerPath: '/RumourRanking'},
         {name: '出行政策查询', icon: 'icon-zengce', routerPath: '/GoOutPolicy'},
-        {name: '核酸检测机构', icon: 'icon-jigou', routerPath: '/SearchInstitution'},
+        // {name: '核酸检测机构', icon: 'icon-jigou', routerPath: '/SearchInstitution'},
         {name: '患者行程轨迹', icon: 'icon-chuxing', routerPath: '/PatientRoute'},
       ]
     }
