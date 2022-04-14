@@ -8,7 +8,7 @@ module.exports = {
 
 			// external指定依赖不参与打包
 			config.set('externals', {
-				// vue: 'Vue',
+				vue: 'Vue',
 				'vue-router': 'VueRouter',
 				axios: 'axios',
 				echarts: 'echarts',
