@@ -9,13 +9,11 @@ module.exports = {
 			// external指定依赖不参与打包
 			config.set('externals', {
 				vue: 'Vue',
+				vuex: 'Vuex',
 				'vue-router': 'VueRouter',
 				axios: 'axios',
 				echarts: 'echarts',
 				vant: 'vant',
-				vuex: 'Vuex',
-				'vue-router-link-active': 'VueRouterLinkActive',
-				'vue-template-compiler': 'VueTemplateCompiler',
 			})
 
 			config.plugin('html').tap(args => {  // 设置顶部title
