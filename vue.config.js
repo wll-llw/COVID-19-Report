@@ -7,14 +7,14 @@ module.exports = {
 			config.entry('app').clear().add('./src/main-prod.js')
 
 			// external指定依赖不参与打包
-			// config.set('externals', {
-			// 	vue: 'Vue',
-			// 	'vue-router': 'VueRouter',
-			// 	axios: 'axios',
-			// 	echarts: 'echarts',
-			// 	vant: 'vant',
-			// 	vuex: 'Vuex'
-			// })
+			config.set('externals', {
+				// vue: 'Vue',
+				'vue-router': 'VueRouter',
+				axios: 'axios',
+				echarts: 'echarts',
+				vant: 'vant',
+				// vuex: 'Vuex'
+			})
 
 			config.plugin('html').tap(args => {  // 设置顶部title
 				args[0].isProd = true
