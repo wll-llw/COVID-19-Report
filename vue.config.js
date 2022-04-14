@@ -13,7 +13,9 @@ module.exports = {
 				axios: 'axios',
 				echarts: 'echarts',
 				vant: 'vant',
-				// vuex: 'Vuex'
+				vuex: 'Vuex',
+				'vue-router-link-active': 'VueRouterLinkActive',
+				'vue-template-compiler': 'VueTemplateCompiler',
 			})
 
 			config.plugin('html').tap(args => {  // 设置顶部title

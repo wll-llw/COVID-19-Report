@@ -8,7 +8,7 @@
           数据来源：国家及各地卫健委每日信息发布
         </div>
       </div>
-      <img src="https://www.picbed.cn/images/2021/06/08/bg.png" alt="" />
+      <img src="https://z3.ax1x.com/2021/06/17/2zmTwF.jpg" alt="" />
     </div>
     <div v-if="demosticList" class="report_container">
       <!-- 疫情信息汇总表格 -->
@@ -130,7 +130,8 @@ export default {
 </script>
 <style scoped>
 #DomesticReport{
-  margin-bottom: calc(45px + var(--marginB));
+  width: 100%;
+  margin-bottom: calc(1.2rem + var(--marginB));
 }
 .report_top_bgcImg {
   width: 100%;
