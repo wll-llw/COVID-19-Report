@@ -80,6 +80,7 @@ export default {
         this.demosticList = this.$store.state.demosticDetail  
       } else {
         getDemosticDetail().then(res => {
+          console.log(res, 'demosticDetail')
           this.$store.state.demosticDetail = res.data.data
           this.demosticList = this.$store.state.demosticDetail
         })
