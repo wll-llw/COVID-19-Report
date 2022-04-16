@@ -61,12 +61,12 @@ Vue.use(AMap);
 import ContentSplit from "components/private/contentSplit/index.js" // 引入分割线组件
 Vue.use(ContentSplit)
 
-// import 'vant/lib/index.css' // 引入vantCss文件
+import 'vant/lib/index.css' // 引入vantCss文件
 
 import 'assets/css/base.css' // 导入全局样式
 import 'assets/icon/common.css' // 导入全局字体图标
 
-// import * as echarts from 'echarts' // 导入echarts
+import * as echarts from 'echarts' // 导入echarts
 Vue.prototype.$echarts = echarts
 
 
