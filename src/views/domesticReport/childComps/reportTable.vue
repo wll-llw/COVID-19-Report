@@ -78,6 +78,11 @@ export default {
     DemosticDetail() {
       if (this.$store.state.demosticDetail) {  // 判断本地是否储存了数据
         this.demosticList = this.$store.state.demosticDetail  
+      } else {
+        getDemosticDetail().then(res => {
+          this.$store.state.demosticDetail = res.data.data
+          this.demosticList = this.$store.state.demosticDetail
+        })
       }
     }
   },
