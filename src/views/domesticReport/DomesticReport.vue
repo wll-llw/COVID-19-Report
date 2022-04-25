@@ -53,19 +53,23 @@ export default {
   },
   methods: {
     DemosticDetail() {
-      if (!this.$store.state.demosticDetail) {
+      // if (!this.$store.state.demosticDetail) {
         // 判断本地是否储存了数据
         // 发起网络请求
+        console.log("发起网络请求");
         getDemosticDetail().then((res) => {
-          if (typeof res.data.data == "string") {
+          console.log("res", res);
+          if (typeof res.data.data === "string") {
+            res.data.data = JSON.stringify(res.data.data);
             let result = JSON.parse(res.data.data);
+            console.log("result", result);
             this.demosticList = result;
             this.$store.state.demosticDetail = result; // 保存数据到store
           }
         });
-      } else {
-        this.demosticList = this.$store.state.demosticDetail;
-      }
+      // } else {
+      //   this.demosticList = this.$store.state.demosticDetail;
+      // }
     },
 
     // 加载图表

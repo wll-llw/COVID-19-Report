@@ -89,6 +89,7 @@
             label="选择医院："
             placeholder="选择预约接种医院"
             @click="$router.push('./searchInstitution')"
+            :rules="[{ trigger: 'onChange',required: true, message: '接种医院不能为空' }]"
         >
         </van-field>
         <van-field name="radio" label="是否有病史：">

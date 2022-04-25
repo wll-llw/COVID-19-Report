@@ -17,7 +17,7 @@ export default {
       toolList: [
         {name: '世界疫苗动态', icon: 'icon-yimiaodongtai', routerPath: '/VaccineDetail'},
         {name: '疫情人口迁徙', icon: 'icon-qianxi', routerPath: '/PopulationTransfer'},
-        {name: '疫苗接种预约', icon: 'icon-yuyue', routerPath: '/AppointVaccine'},
+        {name: '核酸检测预约', icon: 'icon-yuyue', routerPath: '/AppointVaccine'},
         {name: '国内疫情速报', icon: 'icon-subao', routerPath: '/NationalNews'},
         {name: '谣言排行榜', icon: 'icon-yaoyan', routerPath: '/RumourRanking'},
         {name: '出行政策查询', icon: 'icon-zengce', routerPath: '/GoOutPolicy'},
