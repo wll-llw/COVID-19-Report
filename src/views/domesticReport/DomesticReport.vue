@@ -58,14 +58,9 @@ export default {
         // 发起网络请求
         console.log("发起网络请求");
         getDemosticDetail().then((res) => {
-          console.log("res", res);
-          if (typeof res.data.data === "string") {
-            res.data.data = JSON.stringify(res.data.data);
-            let result = JSON.parse(res.data.data);
-            console.log("result", result);
-            this.demosticList = result;
-            this.$store.state.demosticDetail = result; // 保存数据到store
-          }
+          const result = res.data.data.diseaseh5Shelf;
+          this.demosticList = result;
+          this.$store.state.demosticDetail = result; // 保存数据到store
         });
       // } else {
       //   this.demosticList = this.$store.state.demosticDetail;
@@ -109,20 +104,21 @@ export default {
     this.DemosticDetail();
   },
   mounted() {
-    this.throttleFun = throttle(this.$refs.cityTable.fixdHead, 150)
+    if (this.$refs.cityTable) {
+      this.throttleFun = throttle(this.$refs.cityTable.fixdHead, 150)
+      this.throttleStopFun = throttle(this.$refs.cityTable.hideHead, 150)
 
-    this.throttleStopFun = throttle(this.$refs.cityTable.hideHead, 150)
-
-    setTimeout(() => {
-      this.tableToTop = this.$refs.cityTable.$el.getBoundingClientRect().top;
-      window.addEventListener("scroll", (e) => {  // 监听滚动
-        if (window.pageYOffset >= this.tableToTop && window.pageYOffset <= this.tableToTop + 100) {
-          this.throttleFun()
-        } else if(window.pageYOffset < this.tableToTop){
-          this.throttleStopFun()
-        }
-      });
-    }, 600);
+      setTimeout(() => {
+        this.tableToTop = this.$refs.cityTable.$el.getBoundingClientRect().top;
+        window.addEventListener("scroll", (e) => {  // 监听滚动
+          if (window.pageYOffset >= this.tableToTop && window.pageYOffset <= this.tableToTop + 100) {
+            this.throttleFun()
+          } else if(window.pageYOffset < this.tableToTop){
+            this.throttleStopFun()
+          }
+        });
+      }, 600);
+    }
   },
   activated () {
     document.addEventListener('scroll', this.listenScroll)
